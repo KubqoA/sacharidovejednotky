@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::guest()) {
+        return view('welcome');
+    }
+    return redirect('/home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'EntriesController@index')->name('home');
+    Route::resource('entry', 'EntriesController');
+});

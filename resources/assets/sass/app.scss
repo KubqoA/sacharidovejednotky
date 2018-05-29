@@ -14,3 +14,9 @@ $link: $primary;
 .navbar-link:hover::after {
   border-color: $link;
 }
+
+.is-gradient {
+  background: rgb(254,154,139);
+  background: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33%, rgba(249,116,143,1) 66%, rgba(247,140,160,1) 100%);
+  color: $white !important;
+}
