@@ -1,2 +1,16 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+$primary: #FD868C;
+$link: $primary;
+
 // Bulma
 @import "~bulma/bulma";
+
+.navbar-link::after {
+  border-color: $text;
+}
+
+.navbar-link:hover::after {
+  border-color: $link;
+}
