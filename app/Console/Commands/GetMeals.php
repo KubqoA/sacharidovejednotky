@@ -66,7 +66,7 @@ class GetMeals extends Command
      */
     public function handle()
     {
-        //$this->getCategories();
+        $this->getCategories();
         $this->getSJ();
         return true;
     }

@@ -3,6 +3,7 @@
 
 $primary: #FD868C;
 $link: $primary;
+$gradient: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33%, rgba(249,116,143,1) 66%, rgba(247,140,160,1) 100%);
 
 // Bulma
 @import "~bulma/bulma";
@@ -16,7 +17,17 @@ $link: $primary;
 }
 
 .is-gradient {
-  background: rgb(254,154,139);
-  background: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33%, rgba(249,116,143,1) 66%, rgba(247,140,160,1) 100%);
+  background: $primary;
+  background: $gradient;
   color: $white !important;
+}
+
+.progress.is-gradientish::-webkit-progress-value {
+  background:$gradient;
+}
+.progress.is-gradientish::-moz-progress-bar {
+  background:$gradient;
+}
+.progress.is-gradientish::-ms-fill {
+  background:$gradient;
 }

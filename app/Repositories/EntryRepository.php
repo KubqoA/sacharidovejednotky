@@ -27,8 +27,14 @@ class EntryRepository
         return $this->model->latest()->get();
     }
 
-    public function store(StoreEntry $request)
+
+    public function getSjForDay()
     {
-        return \Auth::user()->entries()->create($request->validated());
+        return $this->model->whereDate('created_at', '=', now()->startOfDay())->get()->sum('sj');
+    }
+
+    public function store(array $data)
+    {
+        return \Auth::user()->entries()->create($data);
     }
 }

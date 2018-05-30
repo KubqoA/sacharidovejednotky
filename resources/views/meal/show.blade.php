@@ -7,7 +7,6 @@
                 <div class="column is-three-fifths is-offset-one-fifth">
                     <h1 class="title">{{ __('app.add_a_meal') }}</h1>
                     <h2 class="subtitle">{{ __('app.add_a_meal_subtitle') }}</h2>
-                    <a class="button is-light has-text-primary" href="{{ route('mealCategory.index') }}">{{ __('app.choose_from_meals') }}</a>
                     @if($errors->any())
                         <div class="notification is-danger">
                             <ul>
@@ -17,35 +16,28 @@
                             </ul>
                         </div>
                     @endif
-                    <form  method="POST" action="{{ route('entry.store') }}">
+                    <form  method="POST" action="{{ route('entry.storeMealEntry', ['meal' => $meal]) }}">
                         @csrf
                         <br>
                         <div class="field">
                             <label for="name" class="label">{{ __('app.meal_name') }}</label>
                             <div class="control">
-                                <input class="input{{ $errors->has('name') ? ' is-danger' : '' }}" id="name" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                                <input class="input is-disabled {{ $errors->has('name') ? ' is-danger' : '' }}" id="name" type="text" name="name" value="{{ $meal->name }}" required disabled>
                             </div>
                         </div>
                         <label for="amount" class="label">{{ __('app.quantity') }}</label>
                         <div class="field has-addons">
                             <p class="control is-expanded">
-                                <input class="input{{ $errors->has('quantity') ? ' is-danger' : '' }}" id="amount" type="number" step="0.01" name="quantity" value="{{ old('quantity') }}" required>
+                                <input class="input{{ $errors->has('quantity') ? ' is-danger' : '' }}" id="amount" type="number" step="0.01" name="quantity" value="{{ old('quantity') ?? $meal->base_amount }}" required>
                             </p>
                             <p class="control">
                                 <span class="select">
                                   <select name="quantity_unit" required>
-                                    <option @if(old('quantity_unit') == 'g') selected @endif>g</option>
-                                    <option @if(old('quantity_unit') == 'ml') selected @endif>ml</option>
+                                    <option @if(old('quantity_unit') == $meal->base_unit) selected @endif>{{ $meal->unit }}</option>
                                     <option @if(old('quantity_unit') == 'ks') selected @endif>ks</option>
                                   </select>
                                 </span>
                             </p>
-                        </div>
-                        <div class="field">
-                            <label for="sj" class="label">{{ __('app.sj') }}</label>
-                            <div class="control">
-                                <input class="input{{ $errors->has('sj') ? ' is-danger' : '' }}" id="sj" type="number" step="0.01" name="sj" value="{{ old('sj') }}" required>
-                            </div>
                         </div>
                         <div class="field is-grouped">
                             <div class="control">

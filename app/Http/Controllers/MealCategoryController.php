@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Meal;
 use App\MealCategory;
 use Illuminate\Http\Request;
 
@@ -14,72 +15,20 @@ class MealCategoryController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $mealCategories = MealCategory::withCount('meals')->get();
+        return view('mealCategory.index', compact('mealCategories'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\MealCategory  $mealCategory
+     * @param  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(MealCategory $mealCategory)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\MealCategory  $mealCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MealCategory $mealCategory)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MealCategory  $mealCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, MealCategory $mealCategory)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\MealCategory  $mealCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(MealCategory $mealCategory)
-    {
-        //
+        $mealCategory = MealCategory::findOrFail($id);
+        $meals = Meal::whereMealCategoryId($id)->paginate(30);
+        return view('mealCategory.show', compact('mealCategory', 'meals'));
     }
 }

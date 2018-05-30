@@ -15,7 +15,7 @@
                             {{ __('app.welcome_subtitle') }}
                         </h2>
                         <a href="{{ route('register') }}" class="button is-primary">{{ __('app.register') }}</a>
-                        <a href="{{ route('home') }}" class="button is-">{{ __('app.login') }}</a>
+                        <a href="{{ route('home') }}" class="button is-text">{{ __('app.login') }}</a>
                     </div>
                 </div>
             </div>

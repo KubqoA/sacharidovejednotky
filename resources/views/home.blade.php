@@ -12,6 +12,12 @@
                         </a>
                     </div>
                     <hr>
+                    @if(is_null(Auth::user()->daily_sj_limit))
+                        @include('user.no_limit_sj')
+                    @else
+                        @include('user.limit_sj')
+                    @endif
+                    <hr>
                     @foreach($entries as $entry)
                         @include('entry.preview')
                     @endforeach

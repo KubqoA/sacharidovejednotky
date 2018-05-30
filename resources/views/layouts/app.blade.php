@@ -39,11 +39,14 @@
                 </div>
             @else
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="" class="navbar-link">
+                    <a class="navbar-link">
                         <span class="icon"><i data-feather="user"></i></span>&nbsp;
                         {{ Auth::user()->name }}
                     </a>
                     <div class="navbar-dropdown is-boxed is-right">
+                        <a class="navbar-item" href="{{ route('user.edit') }}">
+                            {{ __('app.settings') }}
+                        </a>
                         <a class="navbar-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('app.logout') }}
