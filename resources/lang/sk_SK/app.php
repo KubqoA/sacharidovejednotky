@@ -45,4 +45,6 @@ return [
     'meal_or_drink_categories' => 'Kategórie jedál alebo nápojov',
     'previous' => 'Predchádzajúce',
     'next' => 'Nasledujúce',
+    'search' => 'Vyhľadať',
+    'search_results' => 'Výsledky hľadania',
 ];

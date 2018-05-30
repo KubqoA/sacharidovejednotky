@@ -5,16 +5,16 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-three-fifths is-offset-one-fifth">
-                    <a class="button is-light has-text-primary" href="{{ route('entry.create') }}">
+                    <a class="button is-light has-text-primary" href="{{ route('mealCategory.index') }}">
                         <span class="icon"><i data-feather="chevron-left"></i></span>&nbsp;
-                        {{ __('app.back_to_entry') }}
+                        {{ __('app.back_to_meal_categories') }}
                     </a>
                     <hr>
-                    <h1 class="title">{{ __('app.meal_or_drink_categories') }}</h1>
-                    @include('meal.search_form')
-                    @foreach($mealCategories as $mealCategory)
-                        @include('mealCategory.preview')
+                    <h1 class="title">{{ __('app.search_results') }}</h1>
+                    @foreach($meals as $meal)
+                        @include('meal.preview')
                     @endforeach
+                    {{ $meals->links('vendor.pagination.bulma') }}
                 </div>
             </div>
         </div>

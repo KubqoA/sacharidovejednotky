@@ -23,6 +23,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'EntriesController@index')->name('home');
     Route::resource('entry', 'EntriesController');
+    Route::get('/meal/search', 'MealController@search')->name('meal.search');
     Route::get('/meal', 'MealCategoryController@index')->name('mealCategory.index');
     Route::get('/meal/category/{id}', 'MealCategoryController@show')->name('mealCategory.show');
     Route::get('/meal/{meal}', 'MealController@show')->name('meal.show');
