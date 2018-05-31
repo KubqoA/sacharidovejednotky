@@ -3,7 +3,8 @@
 
 $primary: #FD868C;
 $link: $primary;
-$gradient: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33%, rgba(249,116,143,1) 66%, rgba(247,140,160,1) 100%);
+//$gradient: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33%, rgba(249,116,143,1) 66%, rgba(247,140,160,1) 100%);
+$gradient: linear-gradient(90deg, rgba(247,140,160,1) 0%, rgba(249,116,143,1) 33%, rgba(253,134,140,1) 66%, rgba(254,154,139,1) 100%);
 
 // Bulma
 @import "~bulma/bulma";
@@ -30,4 +31,13 @@ $gradient: linear-gradient(90deg, rgba(254,154,139,1) 0%, rgba(253,134,140,1) 33
 }
 .progress.is-gradientish::-ms-fill {
   background:$gradient;
+}
+
+.cookie-consent {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -4px 2px 0 whitesmoke;
+  padding: $box-padding;
 }
