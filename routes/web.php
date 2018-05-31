@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    if (Auth::guest()) {
-        return view('welcome');
-    }
-    return redirect('/home');
-});
+Route::get('/', 'Controller@home');
 
 Route::view('/privacy', 'privacy_policy')->name('privacy');
 
