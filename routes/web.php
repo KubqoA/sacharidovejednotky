@@ -18,6 +18,8 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
+Route::view('/privacy', 'privacy_policy')->name('privacy');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

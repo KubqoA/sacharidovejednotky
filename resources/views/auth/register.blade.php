@@ -42,6 +42,14 @@
                                 <input class="input" id="password" type="password" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="privacy_policy" required>
+                                    <a href="{{ route('privacy') }}">{{ __('app.accept_privacy_policy') }}</a>
+                                </label>
+                            </div>
+                        </div>
                         <div class="field is-grouped">
                             <div class="control">
                                 <button class="button is-link">

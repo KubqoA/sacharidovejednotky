@@ -51,4 +51,7 @@ return [
     'search_results' => 'Výsledky hľadania',
     'results_not_found' => 'Nenašli sme vami hľadané jedlo alebo nápoj',
     'no_entries' => 'Za tento deň ste nezaznačili príjem sacharidových jendotiek',
+    'privacy_policy' => 'Ochrana osobných údajov',
+    'privacy_policy_subtitle' => 'Vaše dáta sú v bezpečí',
+    'accept_privacy_policy' => 'Súhlasím s ochranou osobných údajov',
 ];
