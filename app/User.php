@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use \Spiritix\LadaCache\Database\LadaCacheTrait;
+
     use Notifiable;
 
     /**

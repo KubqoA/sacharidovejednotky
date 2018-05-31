@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
+    use \Spiritix\LadaCache\Database\LadaCacheTrait;
+
     protected $guarded = [];
 
     protected static function boot()
