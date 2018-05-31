@@ -33,6 +33,11 @@ class EntryRepository
         return $this->model->whereDate('created_at', '=', now()->startOfDay())->get()->sum('sj');
     }
 
+    public function getSjForWeek()
+    {
+        return $this->model->whereDate('created_at', '>', now()->startOfDay()->subWeek())->get();
+    }
+
     public function store(array $data)
     {
         return \Auth::user()->entries()->create($data);

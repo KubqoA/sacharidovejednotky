@@ -46,6 +46,7 @@
                             <div class="control">
                                 <input class="input{{ $errors->has('sj') ? ' is-danger' : '' }}" id="sj" type="number" step="0.01" name="sj" value="{{ old('sj') }}" required>
                             </div>
+                            <p class="help">{{ __('app.sj_help') }}</p>
                         </div>
                         <div class="field is-grouped">
                             <div class="control">

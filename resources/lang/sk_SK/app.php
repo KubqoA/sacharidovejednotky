@@ -32,9 +32,11 @@ return [
     'meal_name' => 'Názov',
     'quantity' => 'Množstvo',
     'sj' => 'Počet sacharidových jednotiek',
+    'sj_help' => 'Jedna sacharidová jednotka je 10g sacharidov v dannom jedle alebo nápoji.',
     'add' => 'Pridať',
     'no_limit_sj_message' => 'Dnes ste prijali',
     'sj_amount' => '{0} sacharidových jednotiek|{1} sacharidovú jednotku|[2,4] sacharidové jednotky|[5,*] sacharidových jednotiek',
+    'limit_sj' => 'z vašeho denného limitu',
     'set_sj_limit' => 'Momentálne nemáte nastavený denný limit prijatých sacharidových jednotiek. Pre lepšie sledovanie príjmov sachardivých jednotiek si nastavte tento limit.',
     'set_sj_limit_button' => 'Nastaviť denný limit',
     'daily_sj_limit' => 'Denný limit sacharidových jednotiek',
@@ -47,4 +49,6 @@ return [
     'next' => 'Nasledujúce',
     'search' => 'Vyhľadať',
     'search_results' => 'Výsledky hľadania',
+    'results_not_found' => 'Nenašli sme vami hľadané jedlo alebo nápoj',
+    'no_entries' => 'Za tento deň ste nezaznačili príjem sacharidových jendotiek',
 ];

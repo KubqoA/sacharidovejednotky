@@ -11,6 +11,10 @@
                     </a>
                     <hr>
                     <h1 class="title">{{ __('app.search_results') }}</h1>
+                    @include('meal.search_form')
+                    @if($meals->count() == 0)
+                        {{ __('app.results_not_found') }}
+                    @endif
                     @foreach($meals as $meal)
                         @include('meal.preview')
                     @endforeach
